@@ -1,0 +1,45 @@
+Punkte pro Testfall: 5; 0; Maximum: 30 
+
+Testfall: {-1.1-}([p|p<-[0..19],pence(0,0,p)/=p],[s|s<-[0..11],shilling(0,s,0)/=s],[ps|ps<-[0..49],poundSterling(ps,0,0)/=ps]) == ([],[],[]); Testfall OK 
+Testfall: {-1.2-}length[1|p<-[-1..21],s<-[-1..21],ps<-[-1..21],isSound(ps,s,p)] == 10648; Testfall OK 
+Testfall: {-1.3-}length[1|p<-[-1..21],s<-[-1..21],ps<-[-1..21],normalize(ps,s,p)==(ps,s,p)] == 6799; Testfall OK 
+Testfall: {-1.4-}[(i,j)|i<-[0,2..250],j<-[0,3..250],add(0,0,i)(0,0,j)/=normalize(0,0,i+j)] == []; Testfall OK 
+Testfall: {-1.5-}take 9[pc*240+s*12+p|a<-[0,7..200],r<-[2.0..4.5],x<-[1],(pc,s,p)<-[interest(0,0,a)r x]] == [0,0,0,0,13,20,27,26,26]; Testfall OK 
+Testfall: {-1.6-}sum[pc*240+s*12+p|a<-[0,7..200],r<-[2.0..4.5],x<-[1],(pc,s,p)<-[interest(0,0,a)r x]] ==  46420; Testfall OK 
+
+Testfaelle OK: 6; Testfaelle FALSCH: 0
+Punkte : 30
+
+Punkte pro Testfall: 4; 0; Maximum: 20 
+
+Testfall: {-2.1-}let c=curry3;u=uncurry3;in 1 == 1; Testfall OK 
+Testfall: {-2.2-}let f(a,b,c)=(a+2*b+3*c); in curry3 f 1 1 1 == 6; Testfall OK 
+Testfall: {-2.3-}let f(a,b,c)=(a+2*b+3*c); in (curry3.uncurry3.curry3)f 3 2 1 == 10; Testfall OK 
+Testfall: {-2.4-}let g a b c=(a+2*b+3*c); in (uncurry3.curry3.uncurry3)g(3,2,1) == 10; Testfall OK 
+Testfall: {-2.5-}let g a b c=a++b++c; in (uncurry3.curry3.uncurry3)g("a","b","c") == "abc"; Testfall OK 
+
+Testfaelle OK: 5; Testfaelle FALSCH: 0
+Punkte : 20
+
+Punkte pro Testfall: 7; 0; Maximum: 28 
+
+Testfall: {-3.1-}[v|v<-[1..20],fv<-[fromInteger v],dist(2*fv)fv fv 1/=v*2] == []; Testfall OK 
+Testfall: {-3.2-}take 5[dist d v1 v2 t|d<-[5.0..9.0],v1<-[1.0..6.0],v2<-[1.0..6],t<-[1..4]] == [2,4,-1,-1,3]; Testfall OK 
+Testfall: {-3.3-}sum[dist d v1 v2 t|d<-[5.0..9.0],v1<-[1.0..6.0],v2<-[1.0..6],t<-[1..4]] == 145; Testfall OK 
+Testfall: {-3.4-}length[(d,v1,v2,t)|d<-[5.0..9.0],v1<-[1.0..6.0],v2<-[1.0..6],t<-[1..4],dist d v1 v2 t<0] == 591; Testfall OK 
+
+Testfaelle OK: 4; Testfaelle FALSCH: 0
+Punkte : 28
+
+Punkte pro Testfall: 6; 0; Maximum: 22 
+
+Testfall: {-4.1-}[length[1|t<-[1..31],m<-[1..6],wochentag2 "Montag" False(t,m)==w]|w<-["Montag"]] == [26]; Testfall OK 
+Testfall: {-4.2-}[length[1|t<-[1..31],m<-[7..12],wochentag2 "Montag" True(t,m)==w]|w<-["Dienstag"]] == [27]; Testfall OK 
+Testfall: {-4.3-}[length[1|t<-[1..31],m<-[1..7],wochentag2 "Montag" True(t,m)==w]|w<-["Mittwoch"]] == [31]; Testfall OK 
+Testfall: {-4.4-}[length[1|t<-[1..31],m<-[1..12],wochentag2 "Donnerstag" True(t,m)==w]|w<-["Donnerstag"]] == [53]; Testfall OK 
+
+Testfaelle OK: 4; Testfaelle FALSCH: 0
+Punkte : 22
+
+Punkte gesamt: 100
+

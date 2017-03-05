@@ -1,0 +1,39 @@
+Punkte pro Testfall: 10; 0; Maximum: 30 
+
+Testfall: {-1.1-}let o=Nat((A,A,A),(Null,Null,Eins));null=minusN o o;in plusN null o == o; Testfall OK 
+Testfall: {-1.2-}let n=12;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],plusN(f i)(f j)/=f(i+j)] == []; Testfall OK 
+Testfall: {-1.3-}let n=35;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[i|i<-[1..n],plusN o(f i)==f i] == []; Testfall OK 
+
+Testfaelle OK: 3; Testfaelle FALSCH: 0
+Punkte : 30
+
+Punkte pro Testfall: 10; 0; Maximum: 40 
+
+Testfall: {-1.4-}let n=9;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],modN(f i)(f j)/=f(i`mod`j)] == []; Testfall OK 
+Testfall: {-1.5-}let n=4;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..3],powerN(f i)(f j)/=f(i^j)] == []; Testfall OK 
+Testfall: {-1.6-}let n=9;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],timesN(f i)(f j)/=f(i*j)] == []; Testfall OK 
+Testfall: {-1.7-}let n=20;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],leN(f i)(f j)/=(i<j)] ; Testfall FALSCH 
+Erwartet: {-1.7-}let n=20;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],leN(f i)(f j)/=(i<j)] == [] 
+Ausgabe:  {-1.7-}let n=20;o=Nat((A,A,A),(Null,Null,Eins));f n=iterate(plusN o)(minusN o o)!!n;in take 5[(i,j)|i<-[1..n],j<-[1..n],leN(f i)(f j)/=(i<j)] ==  TIMEOUT nach 5s 
+
+Testfaelle OK: 3; Testfaelle FALSCH: 1
+Punkte : 30
+
+Punkte pro Testfall: 10; 0; Maximum: 10 
+
+Testfall: {-1.8-}let null=Nat((A,A,A),(Null,Null,Null)); in [f null null|f<-[eqN,neqN,grN,leN,grEqN]] == [True,False,False,False,True]; Testfall OK 
+
+Testfaelle OK: 1; Testfaelle FALSCH: 0
+Punkte : 10
+
+Punkte pro Testfall: 20; 0; Maximum: 20 
+
+Testfall: {-2-}let d=(Nat((A,A,A),(Null,Null,Eins)),Feber,Nat((A,A,A),(Null,Null,Eins)));in wochentag4 d Montag d ; Testfall FALSCH 
+Erwartet: {-2-}let d=(Nat((A,A,A),(Null,Null,Eins)),Feber,Nat((A,A,A),(Null,Null,Eins)));in wochentag4 d Montag d == Montag 
+Ausgabe:  {-2-}let d=(Nat((A,A,A),(Null,Null,Eins)),Feber,Nat((A,A,A),(Null,Null,Eins)));in wochentag4 d Montag d == Donnerstag   
+
+Testfaelle OK: 0; Testfaelle FALSCH: 1
+Punkte : 0
+
+Punkte gesamt: 70
+

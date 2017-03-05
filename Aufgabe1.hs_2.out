@@ -1,0 +1,46 @@
+Punkte pro Testfall: 5; 0; Maximum: 25 
+
+Testfall: {-1.1-}wochentag "Freitag" True 200 == "Montag"; Testfall OK 
+Testfall: {-1.2-}[d|d<-[1..50],b<-[False,True],wochentag"Montag"b d==wochentag"Montag"b(d+1)] == []; Testfall OK 
+Testfall: {-1.3-}[d|d<-[1..200],wochentag"Montag"False d/=wochentag"Montag"True(d+7)] == []; Testfall OK 
+Testfall: {-1.4-}[d|d<-[1..365],wochentag"Montag"False d/=wochentag"Montag"True d] == []; Testfall OK 
+Testfall: {-1.5-}[d|d<-[1..365],wochentag"Samstag"False d/=wochentag"Sonnabend"True d] == []; Testfall OK 
+
+Testfaelle OK: 5; Testfaelle FALSCH: 0
+Punkte : 25
+
+Punkte pro Testfall: 5; 0; Maximum: 25 
+
+Testfall: {-2.1-}vc 0 0  == 1; Testfall OK 
+Testfall: {-2.2-}[vc n r|n<-[0..2],r<-[0..2]] == [1,-1,-1,1,1,-1,1,2,2]; Testfall OK 
+Testfall: {-2.3-}(take 5.drop 30)[vc n r|n<-[0..9],r<-[0..n]] == [42,210,840,2520,5040]; Testfall OK 
+Testfall: {-2.4-}(take 5.drop 30)[vuc(n,r)|n<-[0..9],r<-[0..n]] == [42,210,840,2520,5040]; Testfall OK 
+Testfall: {-2.5-}[vc 30 i|i<-[17..19]] == [42597073035662745600000,553761949463615692800000,6645143393563388313600000]; Testfall OK 
+
+Testfaelle OK: 5; Testfaelle FALSCH: 0
+Punkte : 25
+
+Punkte pro Testfall: 5; 0; Maximum: 25 
+
+Testfall: {-3.1-}frequencySort "et9Ea9earE9E9" == "rtaaeeEEE9999"; Testfall OK 
+Testfall: {-3.2-}(frequencySort.reverse)['a'..'z'] == ['a'..'z']; Testfall OK 
+Testfall: {-3.3-}[i|i<-[0..3],(frequencySort.show.(7^).(7^))i/=(frequencySort.frequencySort.show.(7^).(7^))i] == []; Testfall OK 
+Testfall: {-3.4-}[i|i<-[0..3],r<-[4..7],v<-[(show.(r^).(r^))i],frequencySort v/= frequencySort v] == []; Testfall OK 
+Testfall: {-3.5-}[i|i<-[0..3],r<-[3..9],v<-[(show.(r^).(r^))i],frequencySort v/= (frequencySort.reverse)v] == []; Testfall OK 
+
+Testfaelle OK: 5; Testfaelle FALSCH: 0
+Punkte : 25
+
+Punkte pro Testfall: 5; 0; Maximum: 25 
+
+Testfall: {-4.1-}pcheck 8 == False; Testfall OK 
+Testfall: {-4.2-}[i|i<-[0..40],pcheck i] == [0,1,2,3,4,5,6,7,9,18,27,36]; Testfall OK 
+Testfall: {-4.3-}[i|i<-[41..99],pcheck i] == [45,54,63,65,73,81,89,97]; Testfall OK 
+Testfall: {-4.4-}take 5[i|i<-[7^4..],pcheck i] == [2412,2484,2556,2565,2637]; Testfall OK 
+Testfall: {-4.5-}take 5[i|i<-[7^7..],pcheck i] == [823883,824395,824907,825419,825931]; Testfall OK 
+
+Testfaelle OK: 5; Testfaelle FALSCH: 0
+Punkte : 25
+
+Punkte gesamt: 100
+
